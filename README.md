@@ -20,8 +20,8 @@ cd yourproject
 ### 2️⃣ Create and activate a virtual environment
 ```bash
 python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate   # On Windows
+source venv/bin/activate 
+venv\Scripts\activate   
 ```
 
 ### 3️⃣ Install dependencies
@@ -35,9 +35,9 @@ Edit `settings.py` to match your PostgreSQL credentials:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_db_name',
-        'USER': 'your_db_user',
-        'PASSWORD': 'your_db_password',
+        'NAME': 'auth_db',
+        'USER': 'postgres',
+        'PASSWORD': 'arbab786',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -65,8 +65,8 @@ Obtain JWT token:
 ```http
 POST /api/token/
 {
-    "username": "your_username",
-    "password": "your_password"
+    "username": "rajamuhammadarbab",
+    "password": "arbab786"
 }
 ```
 
@@ -80,7 +80,7 @@ Authorization: Bearer your_token_here
 python manage.py shell
 >>> from django.contrib.auth import get_user_model
 >>> User = get_user_model()
->>> u = User.objects.get(username="your_username")
+>>> u = User.objects.get(username="rajamuhammadarbab")
 >>> (u.role, u.is_staff, u.is_superuser)
 ```
 
